@@ -15,11 +15,12 @@ Times has instatiated we use the times method publised by the Times type.
 As exampe:
 
 ```python
-import time
-from times import Times
-t = Times()
-time.sleep(1)
-print "Real {0}s, User {1}s, Sys {2}s".format(*t.times())
+>>> import time
+>>> from times import Times
+>>> t = Times()
+>>> time.sleep(1)
+>>> print "Real {0}s, User {1}s, Sys {2}s".format(*t.times())
+Real 1.21s, User 0.0s, Sys 0.0s
 ```
 
 ## Install
