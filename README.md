@@ -24,7 +24,7 @@ Real 1.21s, User 0.0s, Sys 0.0s
 ```
 
 Sometimes know the time consumed by our programs splitted between the real, user
-and system time is usefull to find out where our program is really consuming the time.
+and system time is useful to find out where our program is really consuming the time.
 The following snippet of Python code finds out the cost of create 10K threads.
 
 ```python

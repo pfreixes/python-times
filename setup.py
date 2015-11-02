@@ -1,6 +1,6 @@
 from setuptools import setup, Extension
 setup(
-    name="times",
+    name="python-times",
     version="0.1",
     description="Get the real, user and system time consumed by your Python program",
     author="Pau Freixes",

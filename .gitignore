@@ -1,3 +1,5 @@
 build
 times.egg-info
 times.so
+dist
+python_times.egg-info
