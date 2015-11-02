@@ -23,6 +23,38 @@ As exampe:
 Real 1.21s, User 0.0s, Sys 0.0s
 ```
 
+Sometimes know the time consumed by our programs splitted between the real, user
+and system time is usefull to find out where our program is really consuming the time.
+The following snippet of Python code finds out the cost of create 10K threads.
+
+```python
+import threading
+import times
+
+class MyThread(threading.Thread):
+    def run(self):
+        # do nothing and return
+        pass
+
+t = times.Times()
+threads = [MyThread() for i in xrange(10000)]
+map(lambda t: t.start(), threads)
+map(lambda t: t.join(), threads)
+print "Real {0}s, User {1}s, Sys {2}s".format(*t.times())
+```
+
+As output it shows that the major time is still consumed by the Python code and not 
+by the Operating System:
+
+```bash
+$ python threads.py 
+Real 0.47s, User 0.43s, Sys 0.18s
+```
+
+*The System time and User time are the CPU-times consumed by the programs. In scenarios
+with many processors and many threads as the previous example, the Real time would be lesser
+than the sum of the System and User times*
+
 ## Install
 
 Python-times comes with the minium files to be installed as a Python package build
