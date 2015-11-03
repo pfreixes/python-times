@@ -6,11 +6,12 @@ Python code.
 This package implements a new type called Times to pick up the real, user
 and system time used for a while by one Python program. This type is a 
 Python implementation of the bash command called *time* to be used by the
-programmer to check those times wherever of code he want.
+programmer to check those times as many times as he want in running time.
 
 Once the Times is instantiated it picks up the current values of the clock
-system using the *times* syscall, to get the time spent from when the 
-Times has instatiated we use the times method publised by the Times type.
+system using the [times syscall](http://linux.die.net/man/2/times) to get after
+a while the real, user and system time spent at some specific point using the
+*Times.times* method.
 
 As exampe:
 
@@ -43,7 +44,7 @@ map(lambda t: t.join(), threads)
 print "Real {0}s, User {1}s, Sys {2}s".format(*t.times())
 ```
 
-As output it shows that the major time is still consumed by the Python code and not 
+The output shows that the major time is still consumed by the Python code and not 
 by the Operating System:
 
 ```bash
@@ -66,15 +67,15 @@ $ python setup.py install
 
 ## Contributing and testing
 
-To run the tests firt you should create a virtualenv where Times will be
-deployed in development way. Use the following instructions for that:
+To run the tests first you should create a virtualenv where Python-times will be
+deployed in development way. Use the following instructions:
 
 ```bash
 $ mkvirtualenv python-times
 $ python setup.py develop
 ```
 
-And then just executes the test with the following command
+And then just execute the test with the following command
 
 ```bash
 $ python test_times.py
